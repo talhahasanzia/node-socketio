@@ -4,8 +4,6 @@ const app = express()
 const socketio = require('socket.io')
 
 
-app.use(express.static('public'))
-
 app.get('/', (req, res) => {
     res.send(`Hello from server!`)
 })
