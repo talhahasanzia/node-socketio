@@ -17,8 +17,10 @@ io.on("connection", (socket)=>{
     console.log(`New user connected`);
     socket.emit("new message", `{"username":"Server","message":"Hello from socket io"}`)
 
-    socket.on("new message", (data)=>{
+    socket.on("new message", (data, fn)=>{
         console.log(`New message received ${data}`);
+        fn(`{"received":"${data}"}`)
+    
     })
 })
 
